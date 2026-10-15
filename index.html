@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معلومات الجهاز</title>
+</head>
+<body style="font-family:Arial;text-align:center;padding:30px">
+  <h1>معلومات الجهاز</h1>
+  <p>هذه الصفحة تعرض معلومات أساسية عن جهازك.</p>
+  <button onclick="showInfo()">عرض المعلومات</button>
+  <pre id="info"></pre>
+  <script>
+    function showInfo() {
+      document.getElementById('info').textContent =
+        'المتصفح: ' + navigator.userAgent + '\n' +
+        'لغة الجهاز: ' + navigator.language + '\n' +
+        'حجم الشاشة: ' + screen.width + ' × ' + screen.height;
+    }
+  </script>
+</body>
+</html>
