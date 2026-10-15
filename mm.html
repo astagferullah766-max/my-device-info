@@ -4,24 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>معلومات الجهاز</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      padding: 20px;
+      color: #1e293b;
+    }
+    h2 { text-align: center; }
+    pre {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      direction: ltr;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-  <h2>معلومات المتصفح والشاشة</h2>
+  <h2>معلومات الجهاز</h2>
   <pre id="info">جاري تحميل المعلومات...</pre>
 
   <script>
-    const info = {
+    const data = {
       userAgent: navigator.userAgent,
       language: navigator.language,
       platform: navigator.platform,
       screenWidth: screen.width,
       screenHeight: screen.height,
+      availableWidth: screen.availWidth,
+      availableHeight: screen.availHeight,
       colorDepth: screen.colorDepth,
-      online: navigator.onLine
+      online: navigator.onLine,
+      cookiesEnabled: navigator.cookieEnabled,
+      timezone: Intl.DateTimeFormat()
+        .resolvedOptions().timeZone
     };
 
     document.getElementById("info").textContent =
-      JSON.stringify(info, null, 2);
+      JSON.stringify(data, null, 2);
   </script>
 </body>
 </html>
